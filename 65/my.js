@@ -41,7 +41,7 @@ class Validator{
 			return false;
 	}
 	isPhone(str){
-		if (str.match(/[+] +\d +\( +[0-9]{3} +\) +[0-9]{3}-[0-9]{2}-[0-9]{2}$/))
+		if (str.match(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/)) //  /[+]? +[7] +[(] +[0-9]{3} +[)] +[0-9]{3}-[0-9]{2}-[0-9]{2}$/
 			return true;
 		else
 			return false;
@@ -53,4 +53,4 @@ var validator = new Validator();
 console.log(validator.isEmail('phphtml@mail.ru'));
 console.log(validator.isDomain('phphtml.net'));
 console.log(validator.isDate('12.05.2020'));
-console.log(validator.isPhone('8(913)817-68-92'));
+console.log(validator.isPhone('+7(913)817-68-92')); //
